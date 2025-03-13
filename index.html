@@ -10,99 +10,440 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="images/favicon/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+      }
+      
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background-color: white;
+        box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        border-radius: 8px;
+      }
+      
+      .header {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .name {
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #2c3e50;
+      }
+      
+      .profile-section {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+      }
+      
+      @media (max-width: 768px) {
+        .profile-section {
+          flex-direction: column-reverse;
+        }
+      }
+      
+      .profile-image {
+        flex: 0 0 250px;
+      }
+      
+      .profile-image img {
+        width: 100%;
+        border-radius: 50%;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease;
+      }
+      
+      .profile-image img:hover {
+        transform: scale(1.03);
+      }
+      
+      .bio {
+        flex: 1;
+      }
+      
+      .bio p {
+        margin-bottom: 15px;
+        font-size: 1.05rem;
+      }
+      
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+      }
+      
+      .social-links a {
+        text-decoration: none;
+        color: #3498db;
+        padding: 8px 15px;
+        border-radius: 4px;
+        transition: all 0.3s ease;
+        font-weight: 600;
+      }
+      
+      .social-links a:hover {
+        background-color: #3498db;
+        color: white;
+      }
+      
+      .section {
+        margin: 40px 0;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+      }
+      
+      .section h2 {
+        font-family: 'Roboto', sans-serif;
+        color: #2c3e50;
+        border-bottom: 2px solid #3498db;
+        padding-bottom: 10px;
+        margin-top: 0;
+      }
+      
+      .footer {
+        text-align: right;
+        font-size: 0.8rem;
+        color: #7f8c8d;
+        margin-top: 40px;
+      }
+      
+      a {
+        color: #3498db;
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+      
+      a:hover {
+        color: #2980b9;
+        text-decoration: underline;
+      }
+      
+      .papers-container {
+        width: 100%;
+      }
+      
+      .paper-item {
+        margin-bottom: 40px;
+        padding: 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+      }
+      
+      .paper-image {
+        flex: 0 0 260px;
+        border: 1px solid #e0e0e0;
+        border-radius: 4px;
+        overflow: hidden;
+      }
+      
+      .paper-image img {
+        width: 100%;
+        display: block;
+      }
+      
+      .paper-content {
+        flex: 1;
+      }
+      
+      .paper-title {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1.4rem;
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #3498db;
+      }
+      
+      .paper-title a {
+        color: #3498db;
+        text-decoration: none;
+      }
+      
+      .paper-title a:hover {
+        text-decoration: underline;
+      }
+      
+      .paper-authors {
+        margin-bottom: 8px;
+        font-size: 1rem;
+      }
+      
+      .paper-venue {
+        font-style: italic;
+        margin-bottom: 8px;
+      }
+      
+      .paper-links a {
+        margin-right: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      
+      @media (max-width: 768px) {
+        .paper-item {
+          flex-direction: column;
+        }
+        
+        .paper-image {
+          width: 100%;
+          max-width: 400px;
+          margin: 0 auto 20px;
+        }
+      }
+    </style>
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-      <tr style="padding:0px">
-        <td style="padding:0px">
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
-                <p class="name" style="text-align: center;">
-                Sofian Chaybouti
-                </p>
-                <p>I'm a PhD student at <a href="https://www.informatik.uni-bonn.de/en">Bonn University</a>, advised by <a href="https://hildekuehne.github.io/">Prof. Hilde Kuehne</a>.
-                  I'm also participating in <a href="https://sightandsound.csail.mit.edu/"> MIT-IBM Watson Sight and Sound Project</a>.
-                </p>
-                  <p>
-                </p>
-                <p> Prior to this, I finished my Master of Engineering in Applied Mathematics at <a href="https://www.ensta-paris.fr/en/node"> ENSTA Paris</a> in France
-                  and my The MVA Master (Mathematics, Vision and Learning) at <a href="https://ens-paris-saclay.fr/en"> ENS Paris-Saclay </a>.
-                </p>
-                <p style="text-align:center">
-                  <a href="mailto:chaybouti@em.uni-frankfurt.de">Email</a> &nbsp;/&nbsp;
-<!--                  <a href="data/WalidBousselham-CV.pdf">CV</a> &nbsp;/&nbsp;-->
-                  <a href="https://scholar.google.com/citations?user=8tewdk4AAAAJ&hl=fr">Scholar</a> &nbsp;/&nbsp;
-                  <a href="https://twitter.com/ChaySofian">Twitter</a> &nbsp;/&nbsp;
-                  <a href="https://github.com/SofianChay">Github</a>
-                </p>
-              </td>
-              <td style="padding:2.5%;width:40%;max-width:40%">
-                <a href="images/YJ09tim5_400x400.jpg"><img style="width:100%;max-width:100%;object-fit: cover; border-radius: 50%;" alt="profile photo" src="images/YJ09tim5_400x400.jpg" class="hoverZoomLink"></a>
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-              <tr>
-              <td style="padding:20px;width:100%;vertical-align:middle">
-                <h2>Research</h2>
-<!--                <p>-->
-<!--                  I'm interested in computer vision, machine learning, optimization, and image processing. Most of my research is about inferring the physical world (shape, motion, color, light, etc) from images. Representative papers are <span class="highlight">highlighted</span>.-->
-<!--                </p>-->
-              </td>
-            </tr>
-          </tbody></table>
-          <table style="width:140%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-
-<!-- HGQA Paper         -->
-<!--
-<tr onmouseout="difsurvey_stop()" onmouseover="difsurvey_start()">
-  <td style="padding:20px;width:25%;vertical-align:middle"> <img src='images/HGQA_architecture.png' width="260"></td>
-  <td style="padding:20px;width:75%;vertical-align:middle">
-    <a href="https://openaccess.thecvf.com/content/CVPR2023/html/Urooj_Learning_Situation_Hyper-Graphs_for_Video_Question_Answering_CVPR_2023_paper.html">
-      <span class="papertitle">Learning Situation Hyper-Graphs for Video Question Answering
-</span>
-    </a>
-    <br>
-	<a href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=ceiuCp4AAAAJ"> Aisha Urooj</a>,
-	 <a href="https://hildekuehne.github.io/"> Hilde Kuehne</a>,
-	<a href="https://bobbywu.com/">Bo Wu</a>,
-	<a href="https://paperswithcode.com/search?q=author%3AKim+Chheu">Kim Chheu</a>,
-    <strong>Walid Bousselham</strong>,
-	<a href="https://people.csail.mit.edu/ganchuang/"> Chuang Gan</a>,
-	<a href="https://www.crcv.ucf.edu/person/niels-lobo/"> Niels Lobo</a>,
-    <a href="https://www.crcv.ucf.edu/person/mubarak-shah/"> Mubarak Shah</a>
-    <br>
-	<em>CVPR<em>, 2023
-    <br>
-    <a href="https://github.com/aurooj/SHG-VQA">code</a>
-      /
-      <a href="https://arxiv.org/abs/2304.08682">arXiv</a>
-      <p></p>
-  -->
-<!--    <p></p>-->
-<!--    <p>-->
-<!--    A survey of recent progress in diffusion models for images, videos, and 3D.-->
-<!--    </p>-->
-<!-- </td> -->
-
-
-  </td>
-          </tbody></table>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-              <td style="padding:0px">
-                <br>
-                <p style="text-align:right;font-size:small;">
-                  Design and source code borrowed from <a href="https://jonbarron.info/"> Jon Barron</a>'s website.
-                </p>
-              </td>
-            </tr>
-          </tbody></table>
-        </td>
-      </tr>
-    </table>
+    <div class="container">
+      <div class="header">
+        <h1 class="name">Sofian Chaybouti</h1>
+      </div>
+      
+      <div class="profile-section">
+        <div class="bio">
+          <p>I'm a PhD student at <a href="https://www.ai.uni-tuebingen.de/">Tubingen AI Center</a>, previously at <a href="https://www.informatik.uni-bonn.de/en">Bonn University</a>, advised by <a href="https://hildekuehne.github.io/">Prof. Hilde Kuehne</a>. I'm also participating in <a href="https://sightandsound.csail.mit.edu/">MIT-IBM Watson Sight and Sound Project</a>.</p>
+          
+          <p>Prior to this, I finished my Master of Engineering in Applied Mathematics at <a href="https://www.ensta-paris.fr/en/node">ENSTA Paris</a> in France and my MVA Master (Mathematics, Vision and Learning) at <a href="https://ens-paris-saclay.fr/en">ENS Paris-Saclay</a>.</p>
+          
+          <p>Before starting my PhD, I worked for 3 years in industry research teams: at <a href="https://www.credit-agricole.com/">Credit Agricole</a>'s Datalab in Montrouge, France, where I mostly focused on NLP and research engines, and at <a href="https://www.noahlab.com.hk/">Huawei's Noah's Ark Lab</a> in Paris, working on optimization and Reinforcement Learning.</p>
+          
+          <div class="social-links">
+            <a href="mailto:chaybouti@em.uni-frankfurt.de">Email</a>
+            <a href="https://scholar.google.com/citations?user=8tewdk4AAAAJ&hl=fr">Scholar</a>
+            <a href="https://twitter.com/ChaySofian">Twitter</a>
+            <a href="https://github.com/SofianChay">Github</a>
+          </div>
+        </div>
+        
+        <div class="profile-image">
+          <a href="images/YJ09tim5_400x400.jpg">
+            <img alt="profile photo" src="images/YJ09tim5_400x400.jpg">
+          </a>
+        </div>
+      </div>
+      
+      <div class="section">
+        <h2>Research</h2>
+        <p>My research focuses on multimodal models, especially Video Understanding, Video-Language modeling, Efficient video representation and efficient Multimodal models.</p>
+      </div>
+      
+      <div class="papers-container">
+        <!-- Paper Template -->
+        <style>
+          .paper-item {
+            margin-bottom: 40px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+          }
+          
+          .paper-image {
+            flex: 0 0 260px;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+          }
+          
+          .paper-image img {
+            width: 100%;
+            display: block;
+          }
+          
+          .paper-content {
+            flex: 1;
+          }
+          
+          .paper-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #3498db;
+          }
+          
+          .paper-title a {
+            color: #3498db;
+            text-decoration: none;
+          }
+          
+          .paper-title a:hover {
+            text-decoration: underline;
+          }
+          
+          .paper-authors {
+            margin-bottom: 8px;
+            font-size: 1rem;
+          }
+          
+          .paper-venue {
+            font-style: italic;
+            margin-bottom: 8px;
+          }
+          
+          .paper-links a {
+            margin-right: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+          }
+          
+          @media (max-width: 768px) {
+            .paper-item {
+              flex-direction: column;
+            }
+            
+            .paper-image {
+              width: 100%;
+              max-width: 400px;
+              margin: 0 auto 20px;
+            }
+          }
+        </style>
+        
+        <!-- Paper 1 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/reveal_main.png" alt="REVEAL: Advancing Relationship-based Video Understanding for Video-Question-Answering">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="#">REVEAL: Advancing Relationship-based Video Understanding for Video-Question-Answering</a>
+            </h3>
+            <p class="paper-authors">
+              <strong>Sofian Chaybouti</strong>, Walid Bousselham, Moritz Wolter, Hilde Kuehne
+            </p>
+            <p class="paper-venue">arXiv, 2025 (coming soon on ArXiv)</p>
+            <p class="paper-links">
+              <a href="#">Paper</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Paper 2 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/maskinversion_main_figure.jpg" alt="MaskInversion: Localized Embeddings via Optimization of Explainability Maps">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="https://arxiv.org/pdf/2407.20034">MaskInversion: Localized Embeddings via Optimization of Explainability Maps</a>
+            </h3>
+            <p class="paper-authors">
+              Walid Bousselham, <strong>Sofian Chaybouti</strong>, Christian Rupprecht, Vittorio Ferrari, Hilde Kuehne
+            </p>
+            <p class="paper-venue">arXiv, 2024</p>
+            <p class="paper-links">
+              <a href="https://arxiv.org/pdf/2407.20034">Paper</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Paper 3 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/LeGrad_main_figure.jpg" alt="LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="https://arxiv.org/abs/2404.03214">LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity</a>
+            </h3>
+            <p class="paper-authors">
+              Walid Bousselham, Angie Boggust, <strong>Sofian Chaybouti</strong>, Hendrik Strobelt, Hilde Kuehne
+            </p>
+            <p class="paper-venue">arXiv, 2024</p>
+            <p class="paper-links">
+              <a href="https://arxiv.org/abs/2404.03214">Paper</a>
+              <a href="https://github.com/WalBouss/LeGrad">Code</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Paper 4 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/melba_main.png" alt="Meta-learning of black-box solvers using deep reinforcement learning">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="https://openreview.net/references/pdf?id=boA7Opcr8-">Meta-learning of black-box solvers using deep reinforcement learning</a>
+            </h3>
+            <p class="paper-authors">
+              <strong>Sofian Chaybouti</strong>, Ludovic Dos Santos, Cedric Malherbe, Aladin Virmaux
+            </p>
+            <p class="paper-venue">NeurIPS 2022, MetaLearn Workshop</p>
+            <p class="paper-links">
+              <a href="https://openreview.net/references/pdf?id=boA7Opcr8-">Paper</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Paper 5 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/efficientqa_main.png" alt="EfficientQA: A RoBERTa Based Phrase-Indexed Question-Answering System">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="https://arxiv.org/pdf/2101.02157">EfficientQA: A RoBERTa Based Phrase-Indexed Question-Answering System</a>
+            </h3>
+            <p class="paper-authors">
+              <strong>Sofian Chaybouti</strong>, Achraf Saghe, Aymen Shabou
+            </p>
+            <p class="paper-venue">arXiv, 2021</p>
+            <p class="paper-links">
+              <a href="https://arxiv.org/pdf/2101.02157">Paper</a>
+            </p>
+          </div>
+        </div>
+        
+        <!-- Paper 6 -->
+        <div class="paper-item">
+          <div class="paper-image">
+            <img src="images/mix_main.png" alt="MIX: a Multi-task Learning Approach to Solve Open-Domain Question Answering">
+          </div>
+          <div class="paper-content">
+            <h3 class="paper-title">
+              <a href="https://arxiv.org/pdf/2012.09766">MIX: a Multi-task Learning Approach to Solve Open-Domain Question Answering</a>
+            </h3>
+            <p class="paper-authors">
+              <strong>Sofian Chaybouti</strong>, Achraf Saghe, Aymen Shabou
+            </p>
+            <p class="paper-venue">arXiv, 2020</p>
+            <p class="paper-links">
+              <a href="https://arxiv.org/pdf/2012.09766">Paper</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer">
+        <p>Design and source code borrowed from <a href="https://jonbarron.info/">Jon Barron</a>'s website.</p>
+      </div>
+    </div>
   </body>
 </html>
