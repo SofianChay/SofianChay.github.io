@@ -1,0 +1,260 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Deedy - One Page Two Column Resume
+% LaTeX Template
+% Version 1.2 (16/9/2014)
+%
+% Original author:
+% Debarghya Das (http://debarghyadas.com)
+%
+% Original repository:
+% https://github.com/deedydas/Deedy-Resume
+%
+% IMPORTANT: THIS TEMPLATE NEEDS TO BE COMPILED WITH XeLaTeX
+%
+% This template uses several fonts not included with Windows/Linux by
+% default. If you get compilation errors saying a font is missing, find the line
+% on which the font is used and either change it to a font included with your
+% operating system or comment the line out to use the default font.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% TODO:
+% 1. Integrate biber/bibtex for article citation under publications.
+% 2. Figure out a smoother way for the document to flow onto the next page.
+% 3. Add styling information for a "Projects/Hacks" section.
+% 4. Add location/address information
+% 5. Merge OpenFont and MacFonts as a single sty with options.
+% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% CHANGELOG:
+% v1.1:
+% 1. Fixed several compilation bugs with \renewcommand
+% 2. Got Open-source fonts (Windows/Linux support)
+% 3. Added Last Updated
+% 4. Move Title styling into .sty
+% 5. Commented .sty file.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Known Issues:
+% 1. Overflows onto second page if any column's contents are more than the
+% vertical limit
+% 2. Hacky space on the first bullet point on the second column.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass[]{deedy-resume-openfont}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{
+   colorlinks=true,
+   breaklinks=true,
+   urlcolor= black,
+   linkcolor= black,}
+ 
+\pagestyle{fancy}
+\fancyhf{}
+ 
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     LAST UPDATED DATE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \lastupdated
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     TITLE NAME
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\namesection{Chaybouti}{Sofian}{ \urlstyle{same}
+\href{mailto:chaybouti@em.uni-frankfurt.de}{\underline{chaybouti@em.uni-frankfurt.de}} | 06.19.93.55.08 \\ |30 years old
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN ONE
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{minipage}[t]{0.33\textwidth} 
+\sectionsep
+\sectionsep
+\section{Summary}
+Engineer and PhD student at Tubingen AI Center working on Video-Language Modeling. 
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EDUCATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{COURSEWORK} 
+
+\sectionsep
+
+\subsection{Master MVA}
+\textbullet{} Computer vision and \\object recognition\\ 
+\textbullet{} Reinforcement learning \\
+\textbullet{} Natural language processing \\
+\textbullet{} Speech processing \\
+\textbullet{} Deep learning \\
+\textbullet{} Sequential learning\\
+
+
+\subsection{Ensta Paris}
+\textbullet{} Statistical learning \\
+\textbullet{} Differentiable and \\non differentiable optimization \\
+\textbullet{} Discrete optimization \\
+\textbullet{} Markov decision processes \\ 
+\textbullet{} Large scale optimization \\
+\textbullet{} Computational complexity theory \\
+
+\sectionsep
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     LINKS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Links} 
+
+Github: \href{https://github.com/SofianChay}{\bf https://github.com/SofianChay} \\
+LinkedIn: \href{https://www.linkedin.com/in/sofian-chaybouti-82b262173/}{\underline{sofian\_chaybouti}} \\
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     SKILLS
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%     COLUMN TWO
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{minipage} 
+\hfill
+\begin{minipage}[t]{0.66\textwidth} 
+
+
+
+\sectionsep
+\sectionsep
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     RESEARCH
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Education}
+\runsubsection{Master's degree MVA (Mathématiques / Vision / Apprentissage)}
+\descript{| Ecole Normale Supérieure Paris Saclay}
+\location{2019 – 2020 | Cachan, FRANCE}
+\sectionsep
+
+\runsubsection{Master's degree in engineering. Applied Mathematics}
+\descript{| École Nationale Supérieure Des Techniques Avancées - Ensta Paris}
+\location{ 2017 – 2020 | Palaiseau, FRANCE}
+\sectionsep
+
+\runsubsection{Preparatory Classes}
+\descript{| Lycée Faidherbe}
+\location{ 2014 – 2017 | Lille, FRANCE}
+
+
+\sectionsep
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     EXPERIENCE
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Experiences}
+
+\runsubsection{\textit{Tubingen AI Center}}\descript{| \textit{PhD student}}
+\location{April 2023 - }
+Under the supervision of \href{https://hildekuehne.github.io/}{\underline{Prof. Dr. Hilde Kuehne}}. Also participating in \href{https://sightandsound.csail.mit.edu/}{\underline{MIT-IBM Watson Sight and Sound Project}}.
+
+\vspace{5pt}
+
+\runsubsection{\textit{HUAWEI, Noah's Ark Lab}}\descript{| \textit{Research Engineer}}
+\location{August 2021 - April 2023}
+\begin{itemize}
+    \item Paper accepted to the \href{https://meta-learn.github.io/2022/}{\underline{MetaLearn}} workshop: \href{https://openreview.net/forum?id=9pO8hSVu0J}{\underline{Meta-learning of Black-box Solvers Using Deep Reinforcement Learning}} 
+    \item Deep Learning
+    \item Black-Box Optimization
+    \item Meta-Learning
+    \item Reinforcement Learning
+
+\end{itemize}
+
+\runsubsection{\textit{CRÉDIT AGRICOLE S.A, Team AI semantic}}\descript{| \textit{Research Engineer}}
+\location{November 2020 - August 2021}
+\begin{itemize}
+    \item Information Retrieval
+    \item Aspect-Based Sentiment Analysis
+    \item Computer Vision (Information Extraction, Classification and Clustering)
+\end{itemize}
+
+\vspace{5pt}
+
+\runsubsection{\textit{CRÉDIT AGRICOLE S.A, Team AI semantic}}
+\descript{| \textit{NLP Research Intern}}
+\location{April 2020 - September 2020}
+\vspace{5pt}
+Under the supervision of {\href{https://fr.linkedin.com/in/aymen-shabou}{\underline{Aymen Shabou}}}\\
+\vspace{5pt}
+In charge of building a French textual search engine augmented by a span extraction module using deep learning and Question Answering.\\
+\vspace{3pt}
+\textbf{AREAS OF RESEARCH : }
+\begin{itemize}
+    \item \textbf{Open-domain QA} : achieved sota results on the \textit{squad-open} benchmark : \href{https://arxiv.org/abs/2012.09766}{\underline{preprint}}
+    
+    \item Achieved sota results on the \textbf{Phrase index Question Answering} benchmark :  \href{https://arxiv.org/abs/2101.02157}{\underline{preprint}}. 
+
+\end{itemize} 
+
+\vspace{10pt}
+
+\runsubsection{\href{https://www.amalfianalytics.com/}{\underline{Amalfi Analytics}}}
+\descript{| Research intern}
+\location{May - July 2019 (3-month internship) | Barcelona, SPAIN}
+\begin{itemize}
+    \item Under the supervision of Dr. \href{https://www.cs.upc.edu/~gavalda/}{\underline{Ricard Gavaldà}}.
+    \item Implementation of a method helping to evaluate the risks of readmission of hospital patients upon discharge, and to optimize the resources that could be used to reduce the overall number of readmissions. 
+\end{itemize}  
+
+\end{minipage} 
+
+\begin{minipage}[t]{0.66\textwidth} 
+
+\section{PAPERS} 
+\textbullet{} Coming soon: \textit{REVEAL: Advancing Relationship-based Video Understanding for Video-Question-Answering} \\
+\textbullet{} \href{https://arxiv.org/pdf/2407.20034}{\underline{MaskInversion: Localized Embeddings via Optimization of Explainability Maps}} \\
+\textbullet{} \href{https://arxiv.org/abs/2404.03214}{\underline{LeGrad: An Explainability Method for Vision Transformers via Feature Formation Sensitivity}} \\
+\textbullet{} \href{https://openreview.net/forum?id=9pO8hSVu0J}{\underline{Meta-learning of Black-box Solvers Using Deep Reinforcement Learning}} accepted to NeurIPS 2022 MetaLearn workshop. \\
+\textbullet{} \href{https://arxiv.org/abs/2101.02157}{\underline{EfficientQA: a RoBERTa Based Phrase-Indexed Question-Answering System}} \\
+\textbullet{} \href{https://arxiv.org/abs/2012.09766}{\underline{MIX: a Multi-task Learning Approach to Solve Open-Domain Question Answering}} \\
+\sectionsep
+
+\end{minipage} 
+
+
+
+
+
+
+
+
+\end{document}  \documentclass[]{article}
